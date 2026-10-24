@@ -12,6 +12,13 @@ dependencies = ["numpy>=1.26", "matplotlib>=3.8"]
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["engine*", "nn*", "prune*", "train*"]
+exclude = ["tests*", "results*", "experiments*"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+pythonpath = ["."]
+
